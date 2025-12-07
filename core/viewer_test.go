@@ -278,7 +278,7 @@ func TestLoadGIF(t *testing.T) {
 			t.Fatalf("loadGIF() error = %v", err)
 		}
 		if g == nil {
-			t.Error("loadGIF() returned nil GIF")
+			t.Fatal("loadGIF() returned nil GIF")
 		}
 		if len(g.Image) == 0 {
 			t.Error("loadGIF() returned GIF with no frames")
@@ -297,7 +297,9 @@ func TestLoadGIF(t *testing.T) {
 	t.Run("invalid gif file", func(t *testing.T) {
 		// Create a temporary invalid file
 		tmpFile := "../testdata/invalid.gif"
-		os.WriteFile(tmpFile, []byte("not a gif"), 0644)
+		if err := os.WriteFile(tmpFile, []byte("not a gif"), 0644); err != nil {
+			t.Fatalf("Failed to create test file: %v", err)
+		}
 		defer os.Remove(tmpFile)
 
 		_, err := loadGIF(tmpFile)
