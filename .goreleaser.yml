@@ -57,7 +57,6 @@ archives:
     files:
       - README.md
       - LICENSE*
-      - FUTURE_FEATURES.md
 
 checksum:
   name_template: "checksums.txt"
