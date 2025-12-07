@@ -4,19 +4,14 @@ A modern, high-performance GIF viewer for your terminal built with Bubbletea and
 
 ## Installation
 
-### Homebrew (macOS/Linux)
+### Download Pre-built Binary
+
+Download the latest release for your platform from the [releases page](https://github.com/Gaurav-Gosain/jif/releases).
 
 ```bash
-brew tap Gaurav-Gosain/tap
-brew install jif
-```
-
-### Arch Linux (AUR)
-
-```bash
-yay -S jif-bin
-# or
-paru -S jif-bin
+# Extract and run
+tar xzf jif_*.tar.gz
+./jif animation.gif
 ```
 
 ### Go Install
