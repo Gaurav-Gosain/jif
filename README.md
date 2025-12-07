@@ -4,6 +4,12 @@ A modern, high-performance GIF viewer for your terminal built with Bubbletea and
 
 ## Installation
 
+### Quick Install (Linux/macOS)
+
+```bash
+curl -sSL https://raw.githubusercontent.com/Gaurav-Gosain/jif/main/install.sh | bash
+```
+
 ### Download Pre-built Binary
 
 Download the latest release for your platform from the [releases page](https://github.com/Gaurav-Gosain/jif/releases).
