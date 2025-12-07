@@ -107,41 +107,25 @@ release:
 
     ### Installation
 
-    #### Quick Install (Linux/macOS)
-
-    ```bash
-    curl -sSL https://raw.githubusercontent.com/Gaurav-Gosain/jif/main/install.sh | bash
-    ```
-
-    #### Homebrew (macOS/Linux)
-
-    ```bash
-    brew tap Gaurav-Gosain/tap
-    brew install jif
-    ```
-
-    #### Arch Linux (AUR)
-
-    ```bash
-    # Using yay
-    yay -S jif-bin
-
-    # Using paru
-    paru -S jif-bin
-    ```
-
     #### Manual Download
 
     Download the appropriate binary for your platform below, extract it, and run:
 
     ```bash
+    tar xzf jif_*.tar.gz
     ./jif animation.gif
     ```
 
     #### Go Install
 
     ```bash
-    go install github.com/Gaurav-Gosain/jif@{{ .Tag }}
+    go install github.com/Gaurav-Gosain/jif/cmd/jif@{{ .Tag }}
+    ```
+
+    #### Quick Install Script (Linux/macOS)
+
+    ```bash
+    curl -sSL https://raw.githubusercontent.com/Gaurav-Gosain/jif/main/install.sh | bash
     ```
   footer: |
     ---
@@ -149,37 +133,39 @@ release:
     **Full Changelog**: https://github.com/Gaurav-Gosain/jif/compare/{{ .PreviousTag }}...{{ .Tag }}
 
 # AUR (Arch User Repository)
-aurs:
-  - name: jif-bin
-    homepage: https://github.com/Gaurav-Gosain/jif
-    description: "A modern, high-performance GIF viewer for your terminal with halfblock rendering"
-    maintainers:
-      - "Gaurav Gosain <itsgauravgosain@gmail.com>"
-    license: MIT
-    private_key: "{{ .Env.AUR_SSH_KEY }}"
-    git_url: "ssh://aur@aur.archlinux.org/jif-bin.git"
-    package: |
-      # bin
-      install -Dm755 "./jif" "${pkgdir}/usr/bin/jif"
-
-      # license
-      install -Dm644 "./LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-
-      # documentation
-      install -Dm644 "./README.md" "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+# Disabled until AUR_SSH_KEY is configured
+# aurs:
+#   - name: jif-bin
+#     homepage: https://github.com/Gaurav-Gosain/jif
+#     description: "A modern, high-performance GIF viewer for your terminal with halfblock rendering"
+#     maintainers:
+#       - "Gaurav Gosain <itsgauravgosain@gmail.com>"
+#     license: MIT
+#     private_key: "{{ .Env.AUR_SSH_KEY }}"
+#     git_url: "ssh://aur@aur.archlinux.org/jif-bin.git"
+#     package: |
+#       # bin
+#       install -Dm755 "./jif" "${pkgdir}/usr/bin/jif"
+#
+#       # license
+#       install -Dm644 "./LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+#
+#       # documentation
+#       install -Dm644 "./README.md" "${pkgdir}/usr/share/doc/${pkgname}/README.md"
 
 # Homebrew tap
-homebrew_casks:
-  - name: jif
-    ids:
-      - jif-archive
-    repository:
-      owner: Gaurav-Gosain
-      name: homebrew-tap
-      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
-    homepage: https://github.com/Gaurav-Gosain/jif
-    description: "A modern, high-performance GIF viewer for your terminal"
-    commit_author:
-      name: goreleaserbot
-      email: bot@goreleaser.com
-    commit_msg_template: "Brew cask update for {{ .ProjectName }} version {{ .Tag }}"
+# Disabled until HOMEBREW_TAP_GITHUB_TOKEN is configured and homebrew-tap repo is created
+# homebrew_casks:
+#   - name: jif
+#     ids:
+#       - jif-archive
+#     repository:
+#       owner: Gaurav-Gosain
+#       name: homebrew-tap
+#       token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+#     homepage: https://github.com/Gaurav-Gosain/jif
+#     description: "A modern, high-performance GIF viewer for your terminal"
+#     commit_author:
+#       name: goreleaserbot
+#       email: bot@goreleaser.com
+#     commit_msg_template: "Brew cask update for {{ .ProjectName }} version {{ .Tag }}"
