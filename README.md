@@ -2,6 +2,8 @@
 
 A modern, high-performance GIF viewer for your terminal built with Bubbletea and Lipgloss.
 
+![jif-demo](./demo/jif-demo.gif)
+
 ## Installation
 
 ### Quick Install (Linux/macOS)
