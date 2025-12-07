@@ -22,7 +22,7 @@ fi
 
 # Run unit tests
 echo -e "${YELLOW}Running unit tests...${NC}"
-if go test -v -race -coverprofile=coverage.out ./jif/...; then
+if go test -v -race -coverprofile=coverage.out ./core/...; then
     echo -e "${GREEN}✓ All unit tests passed${NC}"
 else
     echo -e "${RED}✗ Unit tests failed${NC}"
@@ -37,7 +37,7 @@ echo ""
 
 # Run benchmarks
 echo -e "${YELLOW}Running benchmarks...${NC}"
-go test -bench=. -benchmem -run=^$ ./jif/... | tail -n +2
+go test -bench=. -benchmem -run=^$ ./core/... | tail -n +2
 echo ""
 
 # Build the binary
