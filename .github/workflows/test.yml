@@ -44,7 +44,7 @@ jobs:
       run: go run testdata/generate_test_gifs.go
 
     - name: Run tests
-      run: go test -v -race -coverprofile=coverage.out
+      run: go test -v -race -coverprofile=coverage.out ./jif/...
 
     - name: Upload coverage to Codecov
       if: matrix.os == 'ubuntu-latest' && matrix.go-version == '1.23'
@@ -55,14 +55,14 @@ jobs:
         name: codecov-umbrella
 
     - name: Run benchmarks
-      run: go test -bench=. -benchmem -run=^$
+      run: go test -bench=. -benchmem -run=^$ ./jif/...
 
     - name: Build binary
-      run: go build -v -o jif main.go
+      run: go build -v -o bin/jif ./cmd/jif
 
     - name: Test binary execution
       run: |
-        timeout 1s ./jif testdata/simple.gif || true
+        timeout 1s ./bin/jif testdata/simple.gif || true
         echo "Binary test completed"
 
   lint:
