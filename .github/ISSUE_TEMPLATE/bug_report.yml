@@ -1,0 +1,132 @@
+name: Bug Report
+description: Report a bug or unexpected behavior in JIF.
+title: "[BUG]: "
+labels: ["bug", "needs triage"]
+assignees: ["Gaurav-Gosain"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report a bug.
+
+        Before submitting, please:
+        - Ensure this issue has not already been reported.
+        - Provide as much context as possible, including your platform, version, and steps to reproduce.
+        - Attach screenshots or GIF files when applicable.
+
+  - type: input
+    id: bug-summary
+    attributes:
+      label: Brief Description
+      description: A short description of the bug or issue.
+      placeholder: ex. App crashes when loading large GIF files.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Select the platform or environment where the bug occurred.
+      options:
+        - Linux (arm64)
+        - Linux (armv6)
+        - Linux (armv7)
+        - Linux (i386)
+        - Linux (x86_64)
+        - Darwin (arm64)
+        - Darwin (x86_64)
+        - FreeBSD (arm64)
+        - FreeBSD (i386)
+        - FreeBSD (x86_64)
+        - Windows (x86_64)
+        - Windows (i386)
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install-method
+    attributes:
+      label: Installation Method
+      description: How did you install JIF?
+      options:
+        - Bash Script (curl / wget)
+        - Homebrew (macOS/Linux)
+        - Arch Linux (AUR)
+        - Go Install (go install ...)
+        - Manual Build from Source
+        - Other
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version or Commit
+      description: Enter the version tag (e.g. v1.0.0) or Git commit hash where the issue occurs.
+      placeholder: ex. v1.0.0 or abc123f
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior
+      description: Describe what is currently happening.
+      placeholder: ex. The viewer crashes when loading animated.gif
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: Describe what you expected to happen instead.
+      placeholder: ex. The GIF should load and play smoothly
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps To Reproduce
+      description: Provide detailed steps to reproduce the issue.
+      placeholder: |
+        1. Install version v1.0.0
+        2. Run `jif large-animation.gif`
+        3. Observe crash/error
+    validations:
+      required: true
+
+  - type: textarea
+    id: gif-info
+    attributes:
+      label: GIF File Information
+      description: Information about the GIF file that causes the issue (size, dimensions, number of frames, etc.)
+      placeholder: |
+        - File size: 5MB
+        - Dimensions: 800x600
+        - Number of frames: 150
+        - Source: URL or local file
+    validations:
+      required: false
+
+  - type: textarea
+    id: error-logs
+    attributes:
+      label: Error Logs
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / Screen Recording
+      description: Attach screenshots or recordings that help illustrate the issue.
+      placeholder: Drag and drop images here or paste them directly.
+    validations:
+      required: false

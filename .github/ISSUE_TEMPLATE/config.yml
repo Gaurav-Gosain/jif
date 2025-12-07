@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discussions
+    url: https://github.com/Gaurav-Gosain/jif/discussions
+    about: Ask questions, share ideas, and engage with the community
+  - name: Documentation
+    url: https://github.com/Gaurav-Gosain/jif/blob/main/README.md
+    about: Read the documentation for usage instructions and examples

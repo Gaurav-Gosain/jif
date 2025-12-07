@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: jif
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Gaurav
+    family-names: Gosain
+    email: me@gaurav.zip
+repository-code: 'https://github.com/Gaurav-Gosain/jif'
+abstract: >-
+  A modern, high-performance GIF viewer for your terminal
+  with halfblock rendering and progressive loading.
+keywords:
+  - gif viewer
+  - terminal ui
+  - golang
+  - terminal
+  - halfblock
+  - bubbletea
+  - lipgloss
+license: MIT

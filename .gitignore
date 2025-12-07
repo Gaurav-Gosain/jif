@@ -1,0 +1,16 @@
+# Binary
+/jif
+bin/
+
+# Test artifacts
+coverage.out
+coverage.html
+
+# Test data (generated)
+testdata/*.gif
+
+# OS files
+.DS_Store
+
+# Build artifacts
+dist/
