@@ -507,7 +507,7 @@ func loadGIF(source string) (*gif.GIF, error) {
 			return nil, fmt.Errorf("failed to download: %w", err)
 		}
 		if resp.StatusCode != http.StatusOK {
-			resp.Body.Close()
+			_ = resp.Body.Close()
 			return nil, fmt.Errorf("HTTP error: %s", resp.Status)
 		}
 		reader = resp.Body
